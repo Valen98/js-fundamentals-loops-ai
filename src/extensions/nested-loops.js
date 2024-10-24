@@ -13,9 +13,64 @@ const deepThree = []
 
 // HINT: in the below loop, the statements and block of code needs to be changed
 // HINT: in the below loop, the var i represents the loop index
-// for (let i = 5; i < 7; i++) {
-// Your code here
-// }
+for (let i = START; i <= END; i++) {
+  simpleOne.push(i);
+}
+
+for (let i = START; i <= END; i++) {
+  const innerArray = [];
+  for (let j = 0; j < i; j++) {
+    innerArray.push(i);
+  }
+  nestedOne.push(innerArray);
+}
+
+for (let i = START; i <= END; i++) {
+  const innerArray = [];
+  for (let j = i; j >= 1; j--) {
+    innerArray.push(j);
+  }
+  nestedTwo.push(innerArray);
+}
+
+for (let i = START; i <= END; i++) {
+  const outerArray = [];
+  for (let j = 1; j <= i; j++) {
+    const innerArray = [];
+    for (let k = 0; k < j; k++) {
+      innerArray.push(i);
+    }
+    outerArray.push(innerArray);
+  }
+  deepOne.push(outerArray);
+}
+
+for (let i = START; i <= END; i++) {
+  const outerArray = [];
+  for (let j = 1; j <= i; j++) {
+    const innerArray = [];
+    for (let k = 1; k <= j; k++) {
+      innerArray.push(k);
+    }
+    outerArray.push(innerArray);
+  }
+  deepTwo.push(outerArray);
+}
+
+for (let i = START; i <= END; i++) {
+  const outerArray = [];
+  for (let j = 1; j <= i; j++) {
+    const innerArray = [];
+    for (let k = 1; k <= j; k++) {
+      innerArray.push(k);
+    }
+    const sumOfSquares = innerArray.reduce((sum, num) => sum + num * num, 0);
+    const average = sumOfSquares / innerArray.length;
+    outerArray.push(average);
+  }
+  console.log(outerArray)
+  deepThree.push(outerArray);
+}
 
 // 2. Using nested for loops, add arrays to 'nestedOne' where each array has n copies of the outer 'loop index'
 //    eg [[1],[2,2],...]
